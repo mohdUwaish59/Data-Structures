@@ -68,8 +68,22 @@ class Linked_List:
             current=current.link
         print("Element not found")
 
+    def shift_Nth_to_first(self,pos):
+        if pos<1:
+            print("invalif position")
+            return
+        else:
+            current=self.head
+            for i in range(1,pos-1):
+                current=current.link
+            temp=current.link
+            current.link=temp.link
+            temp.link=self.head
+            self.head=temp
+            return
+
     def display(self):
-        if self.head==None
+        if self.head==None:
             print("List is empty")
             return
         current = self.head
@@ -84,5 +98,5 @@ LL.insert_Beginning(45)
 LL.insert_Beginning(55)
 LL.insert_Beginning(65)
 LL.insert_Beginning(100)
-LL.delete(6)
+LL.shift_Nth_to_first(4)
 LL.display()
